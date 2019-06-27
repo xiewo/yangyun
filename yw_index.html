@@ -1,0 +1,549 @@
+<!doctype html>
+	<html>
+		<head>
+			<meta charset='UTF-8'>
+			<title>Document</title>
+			<style>
+      *{margin:0;padding:0;}
+			 a{text-decoration:none;}
+			 .header_top{ 
+				  min-width:1180px;
+					width:98%;
+					line-height:50px;
+					padding:15px;
+					background:#fff;
+					margin:0 auto;
+					display:flex;
+          justify-content:space-between;
+				}
+				.logo{
+						height:32px;
+						display: block;
+				}
+				.logo a{
+					position:absolute;
+				}
+				.logo p{
+				 width:151px;
+				margin-left:151px;
+				}
+				.content_Box {
+				  width:315px;
+				}
+			  .content_Box img{
+				  width:23px;height:23px;
+				}
+				.content_Box a{
+				  font-size:13px;
+				}
+       .download_lode,.login,.car{
+			   display:inline-block;
+				 width:100px;height:26px;
+			 }
+			 .heder_bottom{
+					min-width:1180px;
+					width:100%;
+					height:60px;
+					line-height:60px;
+					background:#1f1f1f;
+			 }
+			 .nav{
+			   width:68%;height:60px;
+			  margin:0 auto;
+				text-align:center;
+			 }
+			.nav a{
+			  color:#fff;
+				padding:25px;
+			}
+			.owl_item{
+		     min-width:1180px;
+				width:100%;
+			}
+			.owl_item>div{position:relative; }
+			.owl_item>div>ul{
+				position:absolute;
+				bottom:20px;
+				right:117px;
+			}
+
+			.owl_item_cloned>img{
+			 min-width:1180px;
+			 width:100%;
+			 height:420px;
+			}
+      .owl_dots{
+			    width:188px;
+					background:rgba(0,0,0,0.1);
+					border-radius:15px;
+					padding:2px;
+					text-align:center;
+					list-style:none;
+					display:flex;
+				 justify-content:space-around;
+			}
+			.owl_dots>li {
+				width: 12px;
+				height: 12px;
+				background: #fff;
+				border-radius: 50%;
+
+				margin: 1px;
+				padding: 1px;
+			}
+			.indx_center{
+				min-width:1180px;
+				width:100%;
+
+			}
+				.CATEGORYS{
+					max-width:1180px;
+					width:100%;
+					margin:0 auto;
+				}
+	 .title{
+		        display:flex;
+		  }
+	 .title>.CName{
+		 margin:0 auto;
+	 }
+        .ITEMBOX_active{  width:100%; overflow: hidden; }
+	  .ITEMBOX_active>.ITEM{  float:left;  margin:0 auto;  }
+	  .ITEMBOX_active>.ITEM>a>img{
+			width:280px;
+		    height:280px;
+		    float:left;
+		  padding:5px;
+
+		}
+	  .ITEMBOX_active>.ITEM>.inde{
+		  clear:left;
+		  padding-left:20px;
+	  }
+	  .NEWS{
+		  clear:left;
+		  max-width:1180px;
+		  margin:0 auto;
+			overflow:hidden
+	  }
+	  .NEW{
+		 float:left;
+	  }
+		.NEW>.front>a>img{
+          width:280px;
+			height:280px;
+			padding:1px;
+		}
+		.front{
+			width: 280px;
+			text-align:center;
+
+		}
+	  .front>div{
+		  width:130px;
+		  height:130px;
+		 display:inline-block;
+
+	  }
+
+			.front>div>a>img{
+				width:135px;
+				height:135px;
+				padding:2px;
+   }
+     /* .searchbar{
+          clear:left;
+         max-width:1180px;
+          background-color:#ff00ff;
+          margin:0 auto;
+      }*/
+
+      .searchbar{
+          width:100%;
+          background-color:#444;
+          height:300px;
+          position: relative;
+          display: block;
+      }
+  .searchbar1{
+      width:100%;
+      margin:0 auto;
+      overflow:hidden;
+      max-width:1180px
+  }
+      .explore{padding:40px 0; }
+      .moregou{
+          height:42px;
+          line-height:42px;
+          font-size: 30px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          color: #ffffff;
+          margin-bottom: 48px;
+      }
+      .saved_search_wrapper{width:100%;}
+      .saved_search_wrapper1{
+          adding:0 20px;
+          font-size:14px;
+          color: #333333;
+          width: 200px;
+          height: 44px;
+          margin-right:10px;
+      }
+      .moregou1{margin-top:48px;
+          height:42px;
+          line-height:42px;
+          font-size:14px;
+          color:#eeeeee;
+      }
+     .moregou2{
+         padding:0 20px;
+         color:#eeeeee;
+         font-weight: 600;
+     }
+
+
+			.go{position: absolute;right:0;width:27%;top:0;background-color: #1f1f1f;    height: 300px;font-size: 40px;
+    font-weight: 500;color:#fff;letter-spacing: 4px;display: flex;}
+			/* .text{background-color:#CF680A;height:300px;width:0;} */
+      .SPECIALS{
+
+          width: 1180px;
+
+        margin:0 auto;
+      }
+  .SPECIALS>.title1{
+
+      height:50px;
+     margin:0 auto;
+      display:flex;
+  justify-content:center;
+  }
+ .title1 h2{
+     min-width:1000px;
+     width:100%;
+     height:50px;
+      text-align:center;
+ }
+      .SPECIALBOX{
+          width:100%;
+      }
+     .stage .SPECIAL>img{
+         width:320px;
+         height:150px;
+     }
+
+     </style>
+		</head>
+		<body>
+		 <header id='header'>
+      <div class='header_top'>
+			<!-- 标题栏 头部-->
+			  <div class='logo'>
+					<a href="#">
+					    <!-- 这里是logo图片-->
+						<img src="../img/yw_home/untitled.png" alt='#' width='92px' height='32px'>
+					</a>
+					<p >— 原创艺术品电商</p>
+				</div>
+				<div class='search'>
+					<a href="#">作品</a>
+					  <!--这里是查询栏 -->
+					<input type="password" placeholder='搜索感兴趣的关键字'>
+					<input type="text">
+					<img src="../img/yw_home/search.png" alt="#">
+				</div>
+				<div class='content_Box'>
+				   <!-- 这里是下载登录注册-->
+					<div class='download_lode' >
+						 <img src="../img/yw_home/app.png" alt="#">
+							<a href="#">下载</a>
+					</div>
+					<div class='login'>
+						 <img src="../img/yw_home/login.png" alt="#">
+							<a href="#">登录/注册</a>
+					</div>
+					<div class='car' >
+						 <img src="../img/yw_home/car.png" alt="#">
+							<a href="#">购物车</a>
+					</div>
+				</div>
+			</div>
+			<div class='heder_bottom'>
+			  <!-- 这是项目导航栏-->
+				<div class='nav'>
+					<div>
+						<a href="#">首页</a>
+						<a href="#">入门收藏</a>
+						<a href="#">潜力收藏</a>
+						<a href="#">名作收藏</a>
+						<a href="#">艺居生活</a>
+					</div>
+				</div>
+			</div>
+			</header><!--轮播图片-->
+     <section class='hero'>
+		   <div id='owl_hero'>
+			    <div class='owl_item'>
+					  	<a href="#"></a>
+							<div class='owl_item_cloned' >
+							  <ul class='owl_dots'>
+							  	<li></li>
+							  	<li></li>
+							  	<li></li>
+							  	<li></li>
+							  	<li></li>
+							  </ul>
+								<img src=" ../img/yw_slideshow/201903211531295539e276c4a.jpg" alt="">
+							</div>
+					</div>
+			 </div>	  
+		 </section>
+       <!-- 这是主体显示的内容-->
+		  <div class='indx_center'>
+			   <section class='	CATEGORYS'>
+				    <div class='title'>
+						   <h2>推荐 / CATEGORYS</h2>
+								<a href="#">更多</a>
+
+				        <div class='CName'>
+								<a href="#">油画</a>
+						</div>
+						<div class='CName'>
+								<a href="#">版画</a>
+						</div>
+						<div class='CName'>
+								<a href="#">水墨</a>
+						</div>
+						<div class='CName'>
+								<a href="#">水彩</a>
+						</div>
+		          </div>
+				   <div class="ITEMBOX_active">
+					   <div class="ITEM">
+						   <a href="">
+							   <img src="../img/yw_body/2016042220475090942e280b0.jpg" alt="#"/>
+						   </a>
+						   <div class="inde">
+							   <a href="#">张檬予</a>
+							   <p>秘密花园</p>
+							   <p>布面油画</p>
+							   <p>￥30500;</p>
+						   </div>
+					   </div>
+					   <div class="ITEM">
+						   <a href="">
+							   <img src="../img/yw_body/20170425165220093f4c3b4b2.jpg" alt="#"/>
+						   </a>
+						   <div class="inde">
+						  		<a href="#">张辉</a>
+								<p>玉兰树值五</p>
+								<p>布面丙烯</p>
+								<p>￥68300;</p>
+						   </div>
+					   </div>
+					   <div class="ITEM">
+						   <a href="">
+						      <img src="../img/yw_body/20180315142337368a24e834f.jpg" alt="#"/>
+						   </a>
+						   <div class="inde">
+							   <a href="#">艾学峰</a>
+							   <p>同根同命系列</p>
+							   <p>布面油画</p>
+							   <p>￥36200;</p>
+						   </div>
+					   </div>
+					   <div class="ITEM">
+						   <a href="">
+						    <img src="../img/yw_body/20170621164247331246b21c9.jpg" alt="#"/>
+						   </a>
+						   <div class="inde">
+							   <a href="#">顶柳婧</a>
+							   <p>wave2</p>
+							   <p>布面丙烯</p>
+							   <p>￥25500;</p>
+						   </div>
+					   </div>
+				   </div>
+				 </section>
+			  <section class="NEWS">
+				  <!-- 这里是第二部分图片显示-->
+				  <div class="title">
+					  <h2>最新上架 / NEW</h2>
+					  <div class="refresh">
+						  <img src="../img/yw_home/huan1.jpg" style="width:20px;height:20px" alt=""/>
+						  <a href="">换一换</a>
+					  </div>
+				  </div>
+                  <div class="NEWBOX">
+					  <div class="NEW">
+						  <div class="front">
+							  <a href="">
+								  <img src="../img/yw_body/20180428125136826aacfa8b1.jpg" alt="我待花开鸟叫"/>
+							  </a>
+						  </div>
+					  </div>
+					  <div class="NEW">
+						  <div class="front">
+							  <a href="">
+								  <img src="../img/yw_body/20170927114505352dd3b7dd3.jpg" alt="我待花开鸟叫"/>
+							  </a>
+						  </div>
+					  </div>
+					  <div class="NEW">
+						  <div class="front">
+							  <div>
+								  <a href="">
+								  <img src="../img/yw_body/20180604163918342e16511f2.jpg" alt="我待花开鸟叫"/>
+							      </a>
+							  </div>
+							  <div>
+								  <a href="">
+									  <img src="../img/yw_body/20170815172107611e1693ed5.jpg" alt="我待花开鸟叫"/>
+								  </a>
+							  </div>
+							  <div>
+								  <a href="">
+									  <img src="../img/yw_body/201808071744590456963a736.jpg" alt="我待花开鸟叫"/>
+								  </a>
+							  </div>
+							  <div>
+								  <a href="">
+									  <img src="../img/yw_body/20171220174305806427fbd0a.jpg" alt="我待花开鸟叫"/>
+								  </a>
+							  </div>
+						  </div>
+					  </div>
+					  <div class="NEW">
+						  <div class="front">
+							  <div>
+								  <a href="">
+									  <img src="../img/yw_body/201902121630294056cf3cb9f.jpg" alt="我待花开鸟叫"/>
+								  </a>
+							  </div>
+							  <div>
+								  <a href="">
+									  <img src="../img/yw_body/201712221750472231b49598c.jpg" alt="我待花开鸟叫"/>
+								  </a>
+							  </div>
+							  <div>
+								  <a href="">
+									  <img src="../img/yw_body/20180409145555040dfb55485.jpg" alt="我待花开鸟叫"/>
+								  </a>
+							  </div>
+							  <div>
+								  <a href="">
+									  <img src="../img/yw_body/20170830171343373ca99c038.jpg" alt="我待花开鸟叫"/>
+								  </a>
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  </section>
+              <section >
+                  <div class="searchbar"  >
+                      <div  class="searchbar1" >
+                          <div class="explore" >
+                              <p class="moregou">
+                                  现在，去探索全新的艺术世界
+                              </p>
+                              <div class="saved_search_wrapper" >
+                                  <select class="saved_search_wrapper1" >
+                                      <option>类别</option>
+                                      <option>油画</option>
+                                      <option>版画</option>
+                                      <option>水墨</option>
+                                      <option>水彩(粉)</option>
+                                      <option>雕塑</option>
+                                      <option>摄影</option>
+                                      <option>其他</option>
+                                  </select>
+                                  <select class="saved_search_wrapper1" >
+                                      <option>价格</option>
+                                      <option>￥2000以下</option>
+                                      <option>￥2000~￥8000</option>
+                                      <option>￥8000~￥15000</option>
+                                      <option>￥15000~￥30000</option>
+                                      <option>￥30000以上</option>
+                                  </select>
+                                  <select class="saved_search_wrapper1">
+                                      <option>尺寸</option>
+                                      <option>50cm</option>
+                                      <option>50cm~100cm</option>
+                                      <option>100cm~150cm</option>
+                                      <option>150cm~200</option>
+                                      <option>200cm以上</option>
+                                  </select>
+                                  <select class="saved_search_wrapper1" >
+                                      <option>风格</option>
+                                      <option>抽象</option>
+                                      <option>具象</option>
+                                      <option>观念</option>
+                                      <option>卡通</option>
+                                      <option>传统国画</option>
+                                      <option>实验水墨</option>
+                                      <option>其他</option>
+                                  </select>
+                              </div>
+                              <p class="moregou1" >
+                                  前往
+                                  <a  class="moregou2" href="#" >潜力收藏</a>
+                                  利用更强大的筛选引擎挑选作品 ›
+                              </p>
+                          </div>
+                      </div>
+                      <div class="go">
+                          <div class="bgblue" style="width:90px;height:100px;margin:auto;color:#ffffff">
+                              <p>开始</p>
+                              <p>GO</p>
+                          </div>
+
+                      </div>
+                  </div>
+               </section>
+              <section class="SPECIALS">
+                  <div class="title1">
+                      <div class="prev">
+                          <a href="#">
+                              <img style="width:50px;height:50px;" src="../img/yw_home/arrow-left.png" alt=""/>
+                          </a>
+                      </div>
+                      <div >
+                          <h2> 专题 / SPECIAL</h2>
+                      </div>
+
+                      <div class="next">
+                          <a href="#">
+                              <img style="width:50px;height:50px;" src="../img/yw_home/arrow-right.png" alt=""/>
+                          </a>
+                      </div>
+                  </div>
+                   <div class="SPECIALBOX">
+                       <div class="stage">
+                            <div class="SPECIAL">
+                                <img   src="../img/yw_body/loft.jpg" alt=""/>
+                            </div>
+                            <div class="SPECIAL">
+                                <img   src="../img/yw_body/loft.jpg" alt=""/>
+                            </div>
+                            <div class="SPECIAL">
+                                <img   src="../img/yw_body/loft.jpg" alt=""/>
+                            </div>
+                            <div class="SPECIAL">
+                                <img  src="../img/yw_body/loft.jpg" alt=""/>
+                            </div>
+                            <div class="SPECIAL">
+                                <img   src="../img/yw_body/loft.jpg" alt=""/>
+                            </div>
+                            <div class="SPECIAL">
+                                <img  src="../img/yw_body/loft.jpg" alt=""/>
+                            </div>
+                       </div>
+                   </div>
+
+              </section>
+
+         </div>
+		</body>
+	</html>
