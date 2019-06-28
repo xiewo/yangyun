@@ -1,0 +1,415 @@
+*{margin:0;padding:0;}
+a{text-decoration:none;}
+li{
+    list-style:none;
+}
+/* 这是最头部样式 */
+.page-t{
+    background:#ddd;
+    font-size:14px;
+    padding:0.5% 8%; 
+    display:flex;
+    justify-content:space-between;
+    min-width:1000px;
+}
+.login-bar{
+    padding-left:5px;
+}
+.login-bar a img{
+    width:20px;
+}
+.login-bar a{
+    color:#333333;
+}
+.member-link>div{
+    float:left;
+   padding-left:5px;
+}
+/* 这是头部样式 */
+.header-main{
+    display:flex;
+    justify-content:space-between;
+    padding:0.5% 8%;
+   text-align:center;
+   min-width:1000px;
+}
+.search-clearfix div input{
+    width:340px;
+    height:30px; 
+    outline:none;
+    border-radius:2px;
+    border:2px solid #41A53A;
+    box-sizing:border-box;
+    padding:5px;
+}
+.search-clearfix div button{
+    width:90px;
+    height:30px; 
+    background:#41A53A;
+    color:#fff;
+    border:0;
+}
+
+.hot-keywords{
+    font-size:12px;
+    text-align:left;
+    margin-top:5px;
+}
+.hot-keywords span{
+    color:#41A53A;
+}
+.hot-keywords a{
+    color:#000;
+    margin-left:8px;
+}
+/* 这是导航栏样式 */
+.nav-bar{
+    min-width:1000px;
+    background:#36A803;
+    text-align:center;
+    padding:0 8%;
+}
+.category-handle{
+    border-left:1px solid #fff;
+    border-right:1px solid #fff;
+    padding:0 20px;
+}
+.nav-page{
+    height:35px;
+    display:flex;
+    justify-content:space-around;
+    line-height:35px;
+    font-size:13px/1.5;
+    color:#fff;
+}
+.nav ul li,.cart-bar ul li{
+    float:left;
+}
+.nav ul li {
+  margin:0 10px;
+}
+.cart-bar{
+    font-size:15px;
+}
+.cart-bar ul li{
+    margin-left:10px;
+}
+.cart-bar ul li a{
+    color:#fff;
+}
+.cart-bar .checkout{
+    display:inline-block;
+    width:80px;
+    height:25px;
+    background-color:#f17c31;
+    text-align:center;
+    line-height:25px;
+    font-size:14px;
+    border-radius:2px;
+}
+/* 这是轮播图样式 */
+.index-main-slid{
+    min-width:1000px;
+}
+.index-slide-list{
+    text-align:center;
+}
+.index-slide-list div a img{
+    width:100%;
+    height:400px;
+    text-align:center;
+}
+
+.index-slide-list div {
+    display:none;
+}
+.index-slide-list div:first-child{
+    display:inline;
+}
+.index-slide-triggers{
+    display:flex;
+    justify-content:center;
+}
+.index-slide-triggers li{
+    width:20px;
+    height:20px;
+    background-color:#41A53A;
+    border-radius:50%;
+    margin:-25px;
+}
+/* 这是整个文本主体颜色 */
+.section{
+    background: #f2f2f2;
+}
+
+/* 这是主体内容一层的样式 */
+/* 这是左边的样式 */
+ .page-box{
+     min-width:1000px;
+ }
+.lsidebar{
+    padding:0 8%;
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+}
+    .gray-title{
+        width:230px;
+        height:38px;
+        display:flex;
+        justify-content:space-between;
+        background-color:#e6e6e6;
+        line-height:38px;
+        font-size:13px;
+    }
+    .gray-title a{
+        color: #333333;
+    }
+    .gray-title a span{
+        font-weight:bold;
+    }
+.gray-content{
+    background-color:#fff;
+}    
+.article-index{
+    width:177px;
+    height:145px;
+    padding-left: 8px;
+    margin-top:-5px;
+}
+.article-index ul li{
+    width:175px;
+    height:27px;
+    overflow:hidden; 
+    text-overflow:ellipsis; 
+    white-space:nowrap;
+    font-size:12px;
+    line-height:27px;
+}
+.article-index ul li a{
+     color:#333333;
+}
+.gray-box-img1{
+    margin-top:50px;
+}
+.gray-box-img2{
+    margin-top:-5px;
+}   
+   /*这是中间主体内容的样式  */
+.label-list{
+    display:flex;
+}      
+  .label-item{
+      width:120px;
+      height:38px;
+      border:1px solid #d4d4d4;
+      line-height:38px;
+      text-align:center;
+      font-size:14px;
+      font-weight:bold;
+      position: relative;
+      background-color:#36A803;
+}
+.label-item .ar{
+    border-width: 6px 6px 1px 6px;
+    border-style: solid;
+    border-color: #36A803 #f2f2f2 #f2f2f2 #f2f2f2;
+    font-size:0;
+    position:absolute;
+    left:55px;
+    top:38px;
+}
+/* 这是一层主体中间图片展示样式 */
+.product-list{
+    display:flex;
+    margin-top:10px;
+    font-size:12px;
+    background-color:#fff;
+    width:770px;
+    height:350px;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    box-sizing:border-box;
+}
+.product-name{
+    display:block;
+    width:236px;
+    color:#000;
+    font-size:13px;
+}
+
+.product-item{
+    display:block;
+    margin: 0 10px 15px;
+}
+.product-item img{
+    height:236px;
+}
+.product-item .red-span{
+    color:#C91C00;
+}
+.product-button{
+    display:flex;
+    justify-content:space-between;
+    text-align:center;
+}
+.product-name,.red-span,.product-price,.product-button{
+    margin-top:5px;
+}
+.dcy-product-num input{
+    width:42px;
+    height:28px;
+    text-align:center;
+    box-sizing:border-box;
+}
+.product-price{
+   color: #41A53A;
+}
+.dcy-product-num{
+    display:flex;
+}
+.dcy-product-num span{
+    border:1px solid #41A53A;
+    width:20px;
+    height:28px;
+    box-sizing:border-box;
+    line-height:22px;
+}
+.product-button a{
+    width:100px;
+    height:28px;
+    background-color:#449a3f;
+    border-radius:8px;
+    color:#fff;
+    margin-right: 15px;
+    line-height: 28px;
+}
+/* 这里是一层中间主体下轮播图样式 */
+.index-sub-slide{
+    display:flex;
+    justify-content:space-between;
+    margin-top:10px;
+}
+.slide-list{
+    display:flex;
+    justify-content:space-between;
+}
+.img-lazyload{
+    width:167px;
+    height:120px;
+    margin:2px; 
+}
+.go-left,.go-right img{
+    margin-top:50px;
+}
+/* 这是右边栏样式表 */
+.rsidebar{
+    width:230px;
+    height:213px; 
+}
+.gray-title1{
+    width:230px;
+    height:38px;    
+    line-height: 38px;
+   
+}
+ .gray-title1 a{
+    display:block;
+    color:#000;
+    font-size:13px; 
+    font-weight:bold;
+    background-color:#e6e6e6;  
+    padding-left:12px;       
+}
+.product-item1{
+    display:flex;
+    justify-content:space-between;
+    box-sizing: border-box;
+    padding:10px;
+    height:84px;
+    border-bottom: 1px dashed #d4d4d4;
+}
+.product-info{
+    width:124px;
+    height:44px;
+    font-size:12px;
+}
+.product-name1 a{
+    display:block;
+   color:#000;
+   height:44px;
+}
+.product-info-div{
+    color:#41A53A;
+}
+/* 这是二层样式，很多都继承了一层的样式 */
+.weekChoice{
+    width:230px;
+    height:410px;
+    background-color:#fff;
+}
+.weekChoice-h3{
+   display:block;
+    background-color:#e6e6e6;
+    font-size:16px;
+    line-height:40px;
+    font-weight:bolder;
+    letter-spacing: 8px;
+}
+.weekChoice-h3 a{
+    color:#000;
+    margin-left:12px;
+}
+.gray-content{
+    width:230px;
+}
+/* 这是三层主体内容样式 */
+.index-title{
+    width:980px;
+    height:38px;
+    display:flex;
+    justify-content:space-between;
+    background-color:#fff; 
+    border-bottom: 2px solid #FFA900 ;
+}
+.goods_h2{
+    width:230px;
+    height:38px;
+    font-size:23px; 
+    background-color:#FFA900; 
+    text-align:center;
+    padding:0 15px;
+    border-radius:2px;
+   
+}
+.more-link{
+    line-height:38px;
+    font-size:15px;
+}
+.more-link a{
+    color:#41A53A;
+   margin-right:15px;
+   border-radius:2px;
+   font-weight: bold;
+}
+.index-content{
+    margin-top:10px;
+    display:flex;
+    justify-content:space-between;
+}
+.img-lazyload1{
+   display:block;
+   margin-top:1px;
+}
+.index-content-m{
+    width:772px;
+    height:715px;
+}
+.left-main{
+    background-color:#fff;
+}
+/* 这是中间图片展示的内容 */
+.d-img{
+    width:100%;
+   text-align: center;
+}
