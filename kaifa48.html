@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 函数的调用都是调用地址
+    // 函数有三种创建方式：
+    // a.函数声明：function fun(a){console.log(a)};(只有这个家伙存在函数声明提前)
+    // b.函数表达式：var fun = function(a){console.log(a)};
+    // c.构造函数：var fun = new Function("a",console.log(a));
+      var fun=1;
+    function Counter(fun){
+          var count = fun;
+　　       return{
+　　            increment:function(){
+　　            count++;
+　　    },
+　　    get:function(){
+　　      return  console.log(count);
+　　     }
+　　   }
+     console.log(1111);
+　　}
+　　var foo =Counter(4);
+　　foo.increment();
+　　foo.get()
+    </script>
+
+
+
+
+
+
+
+<!-- 48个开发常用的工具函数 -->
+ <script>
+
+ //1、  isStatic: 检测数据是不是除了symbol外的原始数据
+      function isStatic(value){
+             return (
+                 typeof value==='string'||
+                 typeof value==='number'||
+                 typeof value==='boolean'||
+                 typeof value==='undefined'||
+                  value===null
+             )
+      }
+ 
+//2、 isPrimitive:检测数据是不是原始数据
+      function isPrimitive(value){
+          return isStatic(value)||typeof value==='symbol'
+      }
+       
+//3、 isObject:判断数据是不是引用类型的数据( 列如： arrays,function,objects,regexes,new Number(0),以及new String('') )
+      function isObject(value){
+          let type=typeof value;
+          return value != null && (type=='object' || type=='function');
+      }
+
+// 4、isObjectLike: 检查value 是否是  类对象。如果一个值是类对象，那么它不应该是null，而且typeof后的结果是'object'
+       function isObjectLike(value){
+            return valu != null && typeof value =='object';
+       }
+
+// 5、getRawType：获取数据类型，返回结果为：Number、String、Object、Array等
+        function getRawType(value){
+            return Object.prototype.toString.call(value).slice(8,-1);
+        }
+        // getRawType([])  ==>Array 
+
+
+// 6、isPlainObject：判断数据是不是Object类型的数据
+       function isPlainObject(obj){
+           return Object.prototype.toString.call(obj)==='[object object]'
+       }
+
+//7、isArray：判断数据是不是数组类型的数据
+       function isArray(arr){
+           return object.prototype.toString.call(value)==='[object Array]'
+       }
+      //    将isArray挂载到Array上
+        Array.isArray = Array.isArry || isArray;
+
+// 8、isRegExp：判断数据是不是正则对象
+      function isRegExp(value){
+          return Object.prototype.toString.call(value)==='[object RegExp]'
+      }
+     
+// 9、isDate：判断数据是不是时间对象
+      function isDate(value){
+          return Object.prototype.toString.call(value)==='[object Date]'
+      }
+
+//     10、isNative：判断 value 是不是浏览器内置函数
+   /*  内置函数toString后的主体代码块为 [native code] ，而非内置函数则为相关代码，所以非内置函数可以进行拷贝(toString后掐头去尾再由Function转)*/
+
+   function isNative(value){
+       return typeof value === 'function'&& /native code/.test(value.toString())
+   }
+
+// 11、isFunction：检查 value 是不是函数
+      function isFunction(value){
+          return Object.prototype.toString.call(value)==='[object Function]'
+      }
+
+// 12、isLength：检查 value 是否为有效的类数组长度
+       function isLength (value){
+           return typeof value == 'number' && value > -1 &&value %1 == 0 && value <=Number.MAX_SAFE_INTEGER;
+       }
+
+
+// 13、isArrayLike：检查 value 是否是类数组
+    //    如果一个值被认为是类数组，那么它不是一个函数，并且value.length是个整数，大于等于 0，小于或等于 Number.MAX_SAFE_INTEGER。这里字符串也将被当作类数组。
+      
+      function isArrayLike(value){
+          return value != null && isLength (value.length) && !isFunction (value);
+      }
+
+
+// 14、isEmpty：检查 value 是否为空
+    // 如果是null，直接返回true；如果是类数组，判断数据长度；如果是Object对象，判断是否具有属性；如果是其他数据，直接返回false(也可改为返回true)
+       function isEmpty(value){
+           if(value==null){
+               return true;
+           }
+           if(isArrayLike(value)){
+               return !value.length;
+           }else if(isPlainObject(value)){
+               for(let key in value){
+                   if(hasOwnProperty.call(value,key)){
+                       return false;
+                   }
+               }
+           }
+           return false;
+       }
+
+// 15、cached：记忆函数：缓存函数的运算结果
+     function cached(fn){
+         let cache = Object.create(null);
+         return function cachedFn(str){
+             let hit = cache[str];
+             return hit || (cache[str] = fn(str))
+         }
+     }
+
+
+// 16、camelize：横线转驼峰命名
+
+       let camelizeRE = /-(\w)/g;
+           function camelize(str){
+               return str.replace(camelizeRE, function(_, c){
+                    return c ? c.toUpperCase() : '';
+               })
+           }
+        // ab-cd-ef ==> abCdEf
+        //  使用记忆his
+           let _camelize = cached(camelize); 
+
+
+
+// 17、hyphenate：驼峰命名转横线命名：拆分字符串，使用 - 相连，并且转换为小写
+
+     let hyphenateRE = /\B([A-Z])/g;
+        function hypheaate (str){
+            return str.replace(hyphenateRE,'-$1').toLowerCase();
+        }
+        //    abCd ==> ab-cd 
+      
+        //  使用记忆函数
+      let  _hyphenate = cached(hyphenate);
+
+
+//  18、capitalize：字符串首位大写
+
+        function capitalize(str){
+            return str.charAt().toUPPERcase() + str.slice();
+        }
+    // abc ==> Abc 
+    
+    // 使用记忆函数
+    let _capitalize = cached(capitalize);
+
+
+// 19、extend：将属性混合到目标对象中
+
+         function  extend(to,_from){
+             for(let key in _from){
+                 to[key] = _from[key];
+             }
+             return to;
+         }
+
+
+// 20、Object.assign：对象属性复制，浅拷贝  
+
+     Object.assign = Object.assing || function(){
+         if(arguments.length == 0) throw new TypeError('cannot convert nudefinde or null to object');
+          
+          let target = arguments[0],
+              args = Array.prototype.slise.call(arguments,1),
+              key 
+              args.forEach(function(item){
+                   for( key in item){
+                       item.hasOwnProperty(key) && (target[key] = item[key])
+                   }
+              })
+              return target;
+     }
+     
+    //  使用Object.assign 可以克隆一个对象
+        let clone = Object.assign({}, target)
+
+    // 简单的深克隆可以使用JSON.parse()和JSON.stringify()，这两个api是解析json数据的，所以只能解析除symbol外的原始类型及数组和对象
+       let clone = JSON.parse(JSON.stringify(target));
+   
+
+// 21、clone：克隆数据，可深度克隆
+    // 这里列出了原始类型，时间、正则、错误、数组、对象的克隆规则，其他的可自行补充
+        function clone(value,deep){
+            if(isPrimitive(value)){
+                return value;
+            }
+            
+            if (isArrayLike(value)){//这是类类数组
+                 value = Array.prototype.slice.call(value);
+                 return value.map(item => deep ? clone(item,deep) : item)
+            }else if (isPlainObject(value)){//这是对象
+                  let target = {}, key ;
+                  for (key in value){
+                      value.hasOWnProperty(key) && ( target[key] = deep ? clone(value[key], deep) : value[key])
+                  }
+            }
+             
+            let type = getRawType(value);
+            switch(type){
+                case 'Date':
+                case 'RegExp':
+                case 'Erray': value = new  window[key](value); break;
+
+            }
+             return value;
+        }
+
+
+// 22、识别各种浏览器及平台
+   
+    //  运行环境浏览器
+      let inBrowser = typeof window != 'undefined';
+   
+    // 运行环境微信
+       let inweex = typeof WXEnvironment !== 'undefined' && !! WXEnvironment.palatform;
+       let weexplatform = inWeex && WXEnvironment.platform.toLowerCase();
+     
+    //浏览器 UA  判断 
+       let UA = inBrowser && window.navigator.userAgent.toLowerCase();
+       let isIE = UA && /msie|trident/.test(UA);
+       let isIE9 = UA && UA.indexOf('msie 9.0') > 0;
+       let isEdge = UA && UA.indexOf('edge/') >  0;
+       let isAndroid = (UA && UA.indexOf('andeoid') > 0) || (weexPlatform === 'android');
+       let isChrome = UA &&  /chrome\/\d+/.test(UA) && !isEdge;   
+
+
+// 23、getExplorerInfo：获取浏览器信息
+      
+       function getExpLorerInfo(){
+           let t = navigator.userAgent.toLowerCase();
+           return 0 <= t.indexOf('msie') ? {// ie <11
+             type: 'IE',
+             version: Number (t.match(/msie ([\d]+)/)[1])
+           } : !!t.match(/trident\/.+?rv:(([\d.]+))/) ? {//ie 11
+                type: 'IE',
+                version: 11
+           } : 0 <= t.indexOf('edge') ? {
+               type:'Edge',
+               version: Number(t.match(/edge\/([\d]+)/)[1])
+           } : 0 <= t.indexOf('firefox') ? {
+                type: 'firefox',
+                version: Number(t.match(/firefox\/([\d]+)/)[1])
+           } : 0 <= t.indexOf('chrome') ? {
+               type: 'chrome',
+               version: Number(t.macth(/opera.([\d]+)/)[1])
+           } : 0 <= t.indexOf('opera') ? {
+               type: 'opera',
+               version: Number(t.macth(/opera.([\d]+)/)[1])
+           } : 0 <= t.indexOf('Safari') ? {
+               type: 'Safari',
+               version: Number(t.macth(/version\/([\d]+)/)[1])
+           } : {
+               type: t,
+               version: -1
+           }
+       }
+
+// 24、isPCBroswer：检测是否为PC端浏览器模式
+
+     function isPCBroswer(){
+          let e = navigator.userAgent.toLowerCase()
+          , t = 'ipad' == e.match(/ipad/i)
+          , i = 'iphone' == e.match(/ihpoe/i)
+          , r = 'midp' == e.match(/midp/i)
+          , n = 'rv:1.2.3.4' == e.math(/rv:1.2.3.4/i)
+          , a = 'ucweb' == e.match(/ucweb/i)
+          , o = 'android' == e.match(/android/i)
+          , s = 'windows ce' == e.match(/windows ce/i)
+          , l = 'windows mobile' == e.match(/windows mobile/i);
+          return !(t || i || r || r || n || a || o || s || l)
+     }
+
+
+// 25、unique：数组去重，返回一个新数组
+      function unique(arr){
+          if(!isArrayLink(arr)){ // 不是类数组对象
+              return arr;
+          }
+          let result = [];
+          let object = [];
+          let obj = object.create(null);
+
+          arr.forEach(iten => {
+              if(isStatic(item)){
+                  let key = item + '_' + getRawType(item);
+                  if(!obj[key]){
+                      obj[key] = true;
+                      result.push(item);
+                      }
+                  }else{
+                      if(!object.includes(item)){
+                          objarr.push(item);
+                  }
+              }
+          })
+          return result;
+      }
+   
+
+
+    // 26、Set简单实现
+
+       window.Set = window.Set || (function(){
+             function Set (arr){
+                 this.items = arr ? unique(arr) : [];
+                 this.size = this.items.length; // Array 的大小
+             }
+             Set.prototype = {
+                 add: function (value){
+                    //  添加元素,若元素已存在,则跳过，返回 Set 结构本身。
+                    if (){}
+                 }
+             }
+       })
+
+ </script>
+
+</body>
+</html>
