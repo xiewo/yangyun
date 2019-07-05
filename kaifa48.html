@@ -355,7 +355,308 @@
              }
        })
 
+                        
+ 
+// 27、repeat：生成一个重复的字符串，有n个str组成，可修改为填充为数组等
+        
+         function repeat (str, n){
+             let res = '';
+             while (n){
+                if(n % 2 === 1){
+                    res += str;
+                }
+                if(n>1){
+                  str += str;
+                }
+                n >>= 1;
+             }
+             return res
+         };
+        //  repeat('123',3) ==> 123123123
+
+
+
+// 28、dateFormater：格式化时间
+    
+       function dateFormater(formater,t){
+           let date = t ? new Date(t) : new Date(),
+                Y = date.getFullYear() + '',
+                M = date.getMonth() + 1,
+                D = date.getDate90,
+                H = date.getHours(),
+                m = date.getMinutes(),
+                s = date.getSeconds();
+              return formater.replace(/YYYY|yyyy/g,Y)
+                 .replace(/YY|yy/g,Y.substr(2,2))
+                 .replace(/MM/g,(M<10?'0' : '') + M)
+                 .replace(/DD/g,(D<10?'0' : '') + D) 
+                 .replace(/HH|hh/g,(H<10?'0' : '') + H)   
+                 .replace(/mm/g,(m<10?'0' : '')+m)
+                 .replace(/ss/g,(s<10?'0' : '')+s) 
+             }
+        //  dateFormater('YYYY-MM-DD HH:mm',t) ==>2019-06-26 18:30 
+        // dateFormater('YYYYMMDDHHmm', t) ==> 201906261830
+
+
+// 29、dateStrForma：将指定字符串由一种时间格式转化为另一种
+             //  from的格式应对应str的位置
+             
+             function dateStrForma(str, from, to){
+                // '20190626' 'YYYYMMDD' 'YYYY年MM月DD日'
+                str += '';
+                let Y = '';
+                if(~(Y = from.indexOf('YYYY'))){
+                    Y = str.substr(Y, 4)
+                    to = to.replace(/YYYY|yyyy/g,Y)
+                }else if(~(Y = from.indexOf('YY'))){
+                    Y = str.substr(Y, 2)
+                    to = to.replace(/YY|yy/g,Y)
+                }
+
+                let k , i
+                ['M','D','H','h','m','s'].forEach(s =>{
+                    i = from.indexOf(s+s)
+                    k = ~i ? str.substr(i, 2) : ''
+                    to = to.replace(s+s, k)
+                }) 
+                return to
+             }
+  
+           // dateStrForma('20190626', 'YYYYMMDD', 'YYYY年MM月DD日') ==> 2019年06月26日
+
+         // dateStrForma('121220190626', '----YYYYMMDD', 'YYYY年MM月DD日') ==> 2019年06月26日
+
+        // dateStrForma('2019年06月26日', 'YYYY年MM月DD日', 'YYYYMMDD') ==> 20190626
+
+       // 一般的也可以使用正则来实现
+       //'2019年06月26日'.replace(/(\d{4})年(\d{2})月(\d{2})日/, '$1-$2-$3') ==> 2019-06-26
+
+
+// 30、getPropByPath：根据字符串路径获取对象属性 : 'obj[0].count'
+
+        function getPropByPath (obj, path, strict){
+            let tempObj = obj ;
+            path = path.replace(/\[(\w+)\]/g, '.$1');//将[0]转化为.0
+            path = path.replace(/^\./, ''); // 去除开的 点
+
+            let keyArr = path.split('.');//根据 点 来切割
+            let i =0 ;
+            for(let ien= keyArr.length; i< len - 1; ++i){
+                if(!tempObj && !strict) break;
+                let key = keyArr[i];
+                if(key in tempObj){
+                    tempObj = tompObj[key];
+                }else {
+                    if (strict){//开启严格模式，没找到对应key值，抛出错误
+                         throw new Error('please transfer a valid prop path to form item!');
+                }
+                break;
+            }
+          }
+          return {
+              o : tempObj,
+              k : keyArr[i],
+              v : tempObj ? tempObj[keyArr[I]] : null //key 值对应的值
+          }
+        };
+
+// 31、GetUrlParam：获取Url参数，返回一个对象
+   
+       function GetUrlParam(){
+           let url = document.location.toString();
+           let arrObj = url.Split('?');
+           let params = Object.create(null);
+           if (arrObj.length > 1){
+               arrObj = arrObj[1].split('&');
+               arrObj.forEach(item => {
+                   item = item.split('=');
+                   params[item[0]] = item[1]
+               })
+           }
+           return params;
+       }
+      // ? a=1&b = 2&c = 3  ==> {a: '1', b: '2', c: '3'}
+
+
+// 32、downloadFile：base64数据导出文件，文件下载
+      
+       function downloadFile(filename, data){
+           let DownloadLink = document.createElement('a');
+
+            if( DownloadLink ){
+                 document.body.appendChild(DownloadLink);
+                 DownloadLink.style = 'display: none';
+                 DownloadLink.download = filename;
+                 DownloadLink.href = data;
+            }
+
+            if( document.createEvent ){
+                let DownloadEvt = documnent.createEvent('MouseEvents');
+                    
+                    DownloadEvt.initEvert('click', true, false);
+                    DownloadLink.dispatchEvent(DownLoadEvt);
+            }else if( document.createEvenObject ){
+                DownloadLink.fireEvent('onclick');
+            }else if(typeof DownloadLink.onclick == 'function'){
+                DownloadLink.onclick();
+                document.body.removeChild(DownloadLink);
+            }
+       }
+
+
+// 33、toFullScreen：全屏
+
+       function toFullScreen(){
+           let elem = document.body;
+             elem.webkitRequestFullScreen 
+           ? elem.webkitRequestFullScreen()
+           : elem.mozRequestFullScreen
+           ? elem.mozRequestFullScreen()
+           : elem.msRequestFullscreen
+           ? elem.msRequestFullscreen()
+           : elem.requestFullScreen
+           ? elem.requestFullScreen()
+           : alert('浏览器不支持全屏');
+       }
+
+//  34、exitFullscreen：退出全屏、
+         function exitFullScreen(){
+             let elem = parent.document;
+               elem.webkitCancelFullScreen
+             ? elem.webkitCancelFullScreen()
+             : elem.mozCancelFullScreen
+             ? elem.mozCancelFullScreen()
+             : elem.cancelFullScreen
+             ? elem.cancelFullScreen()
+             : elem.msExitFullscreen
+             ? elem.msExitFullscreen()
+             : elem.exitFullscreen
+             ? elem.exitFullScreen()
+             : alert(`切换失败，可以尝试Ese退出`);
+         }
+
+//  35、requestAnimationFrame：window动画
+      
+       window.requestAnimationFrame = window.requestAnimationFrame ||
+             window.webkitRequestAnmationFrame ||
+             window.mozRequestAnimationFrame ||
+             window.msRequestAnimationFrame ||
+             window.oRequestAnimationFrame ||
+               function (callback){
+                     //为了使setTimteout的尽可能的接近每秒60帧的效果
+                     window.setTimeout(callback, 1000 / 60);
+               };
+  
+        window.cancelAnimationFrame = window.cancelAnimationFrame ||
+              Window.webkitCancelAnimationFrame ||
+              window.mozCancelAnimationFrame ||
+              window.msCancelAnimationFrame ||
+              window.oCancelAnimationFrame ||
+                 function (id){
+                     //为了使setTimteout的尽可能的接近每秒60帧的效果
+                     window.clearTimeout(id);
+                 }
+
+
+
+// 36、_isNaN：检查数据是否是非数字值
+    //   原生的isNaN会把参数转换成数字(valueof)，而null、true、false以及长度小于等于1的数组(元素为非NaN数据)会被转换成数字，这不是我想要的。Symbol类型的数据不具有valueof接口，所以isNaN会抛出错误，这里放在后面，可避免错误
+            
+       function _isNaN (v){
+           return !(typeof v === 'string' || typeof v=== 'number') ||
+           isNaN(V);
+       }
+
+
+//  37、max：求取数组中非NaN数据中的最大值
+
+      function max(arr){
+          arr= arr.filter(item => !_isNaN(item))
+          return arr.length ? Math.max.apply(null, arr) : undefined
+      }
+         //max([1, 2, '11', null, 'fdf', []]) ==> 11
+
+
+
+//38、min：求取数组中非NaN数据中的最小值
+
+        function min (arr){
+            arr =  arr.filter(item => !_isNaN(item))
+            return arr.length ? Math.min.applay(null, arr) : undefined
+        }
+ //min([1, 2, '11', null, 'fdf', []]) ==> 1
+
+
+//  39、random：返回一个lower - upper之间的随机数
+     //lower、upper无论正负与大小，但必须是非NaN的数据
+   
+        function random(lower, upper){
+            lower = +lower || 0 
+            upper = +upper || 0 
+            return Math.random() * (upper - lower) + lower
+        }
+            //random(0, 0.5) ==> 0.3567039135734613
+            //random(2, 1) ===> 1.6718418553475423
+            //random(-2, -1) ==> -1.4474325452361945
+
+//  40、Object.keys：返回一个由一个给定对象的自身可枚举属性组成的数组
+
+      Object.keys = Object.keys || function keys(object){
+          if(object === null || object === undefined){
+              throw new TypeError(`Cannot convert undefined or null to object`);
+          }
+          let result = [];
+          if(isArrayLike(object) || isPlainObject(object)){
+              for (let key in object ){
+                  object.hasOwnProperty(key) && (result.push(key));
+              }
+          }
+          return result;
+      }
+                       
+                        
  </script>
+    
+    
+    
+    
+    <script>
+      var str='mingtingwomyidyao';
+      var arr=str.split('');
+      var result=arr.reduce(
+          function (prev,elem){
+             if(prev[elem]===undefined){
+                   prev[elem]=1;
+             }else{
+                 prev[elem]++;
+             }
+             return prev;
+          },
+          {}
+          )
+      console.log(result);
+
+      let t = 5;
+      console.log(window.t);
+        function task1(){
+            console.log(`任务1耗时3s`);
+            t+=3;
+        }
+        function task2(){
+            console.log(`任务2耗时6s`);
+            t+=6;
+            var err = true;
+            if(err==true){
+                let t = new Date();
+                console.log(`我会报错的！at: ${t.toLocaleString()}`);
+            }
+        }
+       task1();
+       task2();
+       console.log(`共耗时${t}s`);
+
+   </script>
+    
 
 </body>
 </html>
