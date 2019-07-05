@@ -614,7 +614,69 @@
           return result;
       }
                        
-                        
+                 
+  // 41、Object.values：返回一个给定对象自身的所有可枚举属性值的数组    
+
+      Object.values = Object.value || function values(object){
+          if(object === null || object === undefined ){
+              throw new TypeError(
+                  'Cannot convert undefined or null to object');
+          }
+          let  result  = [];
+          if (isArrayLike(object)  ||  isPlainObject(object)){
+              for(let key in object){
+                  object.haOweProperty(key) && (result.push(object[key]))
+              }
+          }
+          return result
+      }
+
+// 42、arr.fill：使用 value 值来填充 array，从start位置开始, 到end位置结束
+    // （但不包含end位置），返回原数组
+
+       Array.prototype.fill = Array.prototype.fill || function fill(value, start,  end){
+                 let ctx  = this;
+                 let length = ctx.length;
+                 
+                 start  = parseInt(start);
+                 if(isNaN(start)){
+                     start  = 0 ;
+                 }else if(start < 0){
+                     start  = -start > length ? 0 : (length +start);
+                 }
+
+                 end= parseInt(end);
+                 if(isNaN(end) || end > length){
+                     end = length;
+                 }else if(end < 0){
+                     end += length; 
+                 }
+
+                 while (start < end){
+                     ctx[taart++] = nalue;
+                 }
+                 return ctx;
+             }
+
+      //Array(3).fill(2) ===> [2, 2, 2]
+
+// 43、arr.includes：用来判断一个数组是否包含一个指定的值，
+        //如果是返回 true，否则false，可指定开始查询的位置
+
+        Array.prototype.includes = Array.prototype.includes || function includes(value, start){
+            let ctx = this  ;
+            let length = ctx.length;
+             
+            start = parseInt(start);
+            if(isNaN(start)){
+                start = 0
+            }else if(start <  0){
+                start = -start > length ? 0 : (length + start);
+            }
+            let index = ctx.indexOf(value);
+            return index >= start;
+        }                   
+                     
  </script>
     
     
