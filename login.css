@@ -258,7 +258,7 @@ li{
 }
 .dcy-product-num input{
     width:42px;
-    height:28px;
+    height:26px;
     text-align:center;
     box-sizing:border-box;
 }
@@ -271,18 +271,18 @@ li{
 .dcy-product-num span{
     border:1px solid #41A53A;
     width:20px;
-    height:28px;
+    height:26px;
     box-sizing:border-box;
     line-height:22px;
 }
 .product-button a{
     width:100px;
-    height:28px;
+    height:26px;
     background-color:#449a3f;
     border-radius:8px;
     color:#fff;
     margin-right: 15px;
-    line-height: 28px;
+    line-height: 26px;
 }
 /* 这里是一层中间主体下轮播图样式 */
 .index-sub-slide{
@@ -380,7 +380,7 @@ li{
     text-align:center;
     padding:0 15px;
     border-radius:2px;
-   
+   line-height:38px;
 }
 .more-link{
     line-height:38px;
@@ -408,8 +408,89 @@ li{
 .left-main{
     background-color:#fff;
 }
+
+
 /* 这是中间图片展示的内容 */
 .d-img{
     width:100%;
    text-align: center;
+   box-sizing: border-box;
+}
+
+
+/* 这是第四次层样式 */
+
+.page-4{
+   margin:10px 0 0;
+   box-sizing: border-box;
+}
+.left-main-4{
+    width:1230px;
+    margin:0 auto;
+}
+.index-product-4,.index-title-4{
+   width:990px;
+}
+.index-title-4{
+    display:flex;
+    justify-content:space-between;
+    background-color:#fff;
+    height:40px;
+    line-height:40px;
+    border-bottom:2px solid #9BBB1B;
+    font-weight: bold;
+
+}
+.goods_h2-4{
+    width:260px;
+    height:40px;
+    background-color:#9BBB1B;
+     font-size:23px;
+    text-align: center;
+}
+
+.link-4{
+    color:#41A53A;
+    font-size:14px;
+    margin:0 5px;
+}
+
+.index-content-4{
+    width:990px;
+    margin-top:10px;
+    display:flex;
+    justify-content: space-between;
+}
+.link_pic-first-4{
+    width:230px;
+    
+}
+.img-lazyload-4{
+    display:block;
+    margin-bottom:1px;
+}
+.left-main-4{
+    display:flex;
+    justify-content: space-around;
+}
+
+/* 这是第四层中间主体内容样式 */
+.link_pic-last-4{
+    width:780px;
+    height:726px;
+    /* padding-inline-start: 10px; */
+     font-size:12px;
+     margin-left:10px;
+}
+.product-list-4{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.product-item{
+    margin-left:2px;
+}
+
+.red-span{
+    width:236px; 
 }
