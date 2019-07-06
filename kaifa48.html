@@ -675,7 +675,87 @@
             }
             let index = ctx.indexOf(value);
             return index >= start;
-        }                   
+        }     
+                     
+                     
+//  44、arr.find：返回数组中通过测试（函数fn内判断）的第一个元素的值
+          //    这个函数好像有问题
+Array.prototype.find = Array.prototype.find || function find(fu, ctx){
+            ctx = ctx || this
+
+            let result;
+            ctx.some((value, index, arr, thisValue) =>{
+                return fn(value, index, arr) ? (result = value, true) : false
+            })
+            return result;
+       }
+
+
+
+// 45、arr.findIndex ：返回数组中通过测试（函数fn内判断）的第一个元素的下标
+   
+    //    这个函数好像有问题
+       Array.prototype.findIndex = Array.prototype.findIndex || function findIndex(fn,ctx){
+                ctx = ctx || this
+                let result;
+                ctx.some((value, index, arr, thisValue) =>{
+                    return fn(value, index, arr) ? (result = index, true) : false;
+                })
+                return result;
+       }
+      
+
+// 46、performance.timing：利用performance.timing进行性能分析
+    window.onload = function(){
+        setTimeout(function(){
+            let t = performance.timing 
+             
+             console.log('DNS查询耗时 ：' + (t.domainLookupEnd - t.domainLookupStart).toFixed(0));
+             
+             console.log('TCP连接耗时 ：' + (t.connectEnd - t.connectStart).toFixed(0));
+
+             console.log('request请求耗时 ：' + (t.responseEnd - t.responseStart).toFixed(0));
+
+             console.log('解析dom树耗时 ：' + (t.domComplete - t.domInteractive).toFixed(0));
+
+             console.log('白屏时间 ：' + (t.responseStart- t.navigationStart).taFixed(0));
+
+             console.log('domready时间 ：' + (t.domContentLoadedEventEnd - t.navigationStart).tofixed(0));
+
+             console.log('onload时间 ：' + (t.loadEventEnd - t.navigationstart).toFixed(0));
+
+               if(t = preformance.memory){
+                   console.log('js内存使用占比 ：' + (t.usedJSHeapSIZE / t.totalJSHeapSize * 100).tofixed(2)+ '%')
+               }
+        })
+    }
+
+
+//   47、禁止某些键盘事件
+
+   document.addEventListener('keydown', function(event){
+       return !(
+           112 == event.keyCode || //F1
+           123 == event.keyCode ||//F12
+           event.ctrlKey && 82 == event.keyCode || //ctrl + R
+           event.ctrlKey && 78 == event.keyCode || //ctrl + N
+           event.shiftKey && 121 == event.kyeCode || //shift + F10
+           event.altKey && 115 == event.keyCode || // alt + F4
+           'A' == event.srcElement.tagName && event.shiftKey // shift + 点击a标签
+       ) || (event.returnValue = false)
+   });
+
+
+
+// 48、禁止右键、选择、复制
+      ['contextmenu','selectstart','copy'].forEach(
+          function (ev){
+              document.addEventListener(ev,function(event){
+                  return event.returnValue = false
+              })
+          });                     
+                     
+                     
                      
  </script>
     
