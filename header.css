@@ -1,0 +1,146 @@
+*{margin:0;padding:0;}
+a{text-decoration:none;}
+li{list-style:none;}
+
+.header{
+    background:#ddd;
+}
+.topbar{
+    margin:0 auto;
+    width:1225px;
+}
+.page-t{
+    font-size:14px; 
+    display:flex;
+    justify-content:space-between;
+    height:30px;
+    line-height:30px;
+}
+.login-bar{
+    padding-left:5px;
+}
+.login-bar a img{
+    width:20px;
+}
+.login-bar a{
+    color:#333333;
+}
+.member-link>div{
+    float:left;
+   padding-left:5px;
+}
+
+
+/* 这是头部样式 */
+
+/* 这时logo部分 */
+.header-logo{
+    background-color:#fff;
+    height:90px;
+}
+
+.header-main{
+    display:flex;
+    justify-content:space-between;
+    text-align:center;
+    
+}
+.logo{
+    width:330px;
+    height:70px;
+    margin-top:10px;
+  
+}
+.header-pad{
+    width:164px;
+    margin-top:10px;
+}
+.search-clearfix{
+    margin-top:20px;
+}
+.search-clearfix div input{
+    width:340px;
+    height:30px; 
+    outline:none;
+    border-radius:2px;
+    border:2px solid #41A53A;
+    box-sizing:border-box;
+    padding:5px;
+}
+.search-clearfix div button{
+    width:90px;
+    height:30px; 
+    background:#41A53A;
+    color:#fff;
+    border:0;
+}
+
+.hot-keywords{
+    font-size:12px;
+    text-align:left;
+    margin-top:5px;
+}
+.hot-keywords span{
+    color:#41A53A;
+}
+.hot-keywords a{
+    color:#000;
+    margin-left:8px;
+}
+
+
+
+
+
+/* 这是导航栏样式 */
+.nav-bar{
+    background:#36A803;
+    text-align:center;
+    line-height:35px;
+    
+}
+.nav-page{
+    display:flex;
+    justify-content:space-between;
+    font-size:13px/1.5;
+    color:#fff;
+}
+.category-handle{
+    width:180px;
+    border-left:1px solid #fff;
+    border-right:1px solid #fff;
+    padding:0 20px;  
+}
+.ar{
+    width: 15px;
+    height: 15px;
+    display:inline-block;
+    background:url(../img/index.png) no-repeat -56px -41px;
+    margin-left:40px;
+}
+
+.nav ul li,.cart-bar ul li{
+    float:left;
+}
+.nav ul li {
+  margin:0 10px;
+}
+.cart-bar{
+    font-size:15px;
+}
+.cart-bar ul li{
+    margin-left:10px;
+}
+.cart-bar ul li a{
+    color:#fff;
+}
+.cart-bar .checkout{
+    display:inline-block;
+    width:80px;
+    height:25px;
+    background-color:#f17c31;
+    text-align:center;
+    line-height:25px;
+    font-size:14px;
+    border-radius:2px;
+}
