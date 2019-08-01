@@ -1,14 +1,17 @@
 *{margin:0;padding:0;}
 a{text-decoration:none;}
 li{list-style:none;}
-
+/* 头部全部的颜色 */
 .header{
     background:#ddd;
 }
+
+/* 这是最顶部整体样式 */
 .topbar{
     margin:0 auto;
     width:1225px;
 }
+/* 定义为容器 弹性布局 整体字体大小 高度 */
 .page-t{
     font-size:14px; 
     display:flex;
@@ -16,15 +19,21 @@ li{list-style:none;}
     height:30px;
     line-height:30px;
 }
+
+/* 顶部左侧的样式 */
 .login-bar{
     padding-left:5px;
 }
+/* 顶部左侧qq图片宽度 */
 .login-bar a img{
     width:20px;
 }
+
 .login-bar a{
     color:#333333;
 }
+
+/* 顶部右侧 左浮动显示 */
 .member-link>div{
     float:left;
    padding-left:5px;
@@ -34,30 +43,36 @@ li{list-style:none;}
 /* 这是头部样式 */
 
 /* 这时logo部分 */
+
 .header-logo{
     background-color:#fff;
     height:90px;
 }
-
+/* 中间栏 做弹性布局 文字居中对齐 */
 .header-main{
     display:flex;
     justify-content:space-between;
     text-align:center;
-    
 }
+
+/* 定义logo图片的大小 */
 .logo{
     width:330px;
     height:70px;
     margin-top:10px;
-  
 }
+
+/* 定义logo右侧图片 位置 */
 .header-pad{
     width:164px;
     margin-top:10px;
 }
+/* 中间搜索框的样式 */
 .search-clearfix{
     margin-top:20px;
 }
+
+/* input框的样式 */
 .search-clearfix div input{
     width:340px;
     height:30px; 
@@ -67,6 +82,8 @@ li{list-style:none;}
     box-sizing:border-box;
     padding:5px;
 }
+
+/* 确定搜索框的样式 */
 .search-clearfix div button{
     width:90px;
     height:30px; 
@@ -74,15 +91,17 @@ li{list-style:none;}
     color:#fff;
     border:0;
 }
-
+/* input 下的热门商品 */
 .hot-keywords{
     font-size:12px;
     text-align:left;
     margin-top:5px;
 }
+/* 字体的颜色 */
 .hot-keywords span{
     color:#41A53A;
 }
+/* 字体颜色 和距离 */
 .hot-keywords a{
     color:#000;
     margin-left:8px;
@@ -93,6 +112,7 @@ li{list-style:none;}
 
 
 /* 这是导航栏样式 */
+/* 这是最外层div整体样式 */
 .nav-bar{
     background:#36A803;
     text-align:center;
@@ -100,18 +120,23 @@ li{list-style:none;}
     line-height:35px;
     
 }
+/* 定义为容器，左右两头对齐 字体大小和颜色 */
 .nav-page{
     display:flex;
     justify-content:space-between;
     font-size:13px/1.5;
     color:#fff;
 }
+
+/* 显示所有商品两边的白色边框线 */
 .category-handle{
     width:180px;
     border-left:1px solid #fff;
     border-right:1px solid #fff;
-    padding:0 20px;  
+    
 }
+
+/* 所有商品中插入的图片 */
 .ar{
     width: 15px;
     height: 15px;
@@ -120,21 +145,29 @@ li{list-style:none;}
     margin-left:40px;
 }
 
+/* 这是中间导航条 左浮动 */
 .nav ul li,.cart-bar ul li{
     float:left;
 }
+
+/* 每个li中的间距 */
 .nav ul li {
   margin:0 10px;
 }
+
+/* 导航栏右侧样式 字体大小 */
 .cart-bar{
     font-size:15px;
 }
+
 .cart-bar ul li{
     margin-left:10px;
 }
 .cart-bar ul li a{
     color:#fff;
 }
+
+/* 这是去结算功能按钮 所有样式 */
 .cart-bar .checkout{
     display:inline-block;
     width:80px;
@@ -147,65 +180,98 @@ li{list-style:none;}
 }
 
 
+
+/* 这是导航栏中间 所有下拉菜单 */
+
+/* 这是所有商品下的二级菜单页  */
 div.nav-book .nav-items{
     display:none;
     width:220px;
     border:1px solid #ddd;
     text-align:center;
-    background: rgb(255,249,217);
     margin-left:-21px;
     font-size:14px;
-    
 }
 
+/* 当我鼠标进入整个div时 显示下面隐藏的div */
 div.category-handle:hover .nav-items {
     display:block;
-   
 }
-
+/* 当鼠标再次进入一级菜单时背景色*/
 li.nav-min .nav-min-div:hover{
     background-color:#ccc;
 }
 
+/* 当我鼠标进入 一级菜单是 我的二级菜单也显示 */
+div.nav-min-div:hover .min-p {
+    display:block;
+}
+
+/*一级菜单每个li的 下边框 相对定位 个二级菜单做绝对 背景色*/
 ul.nav-items li.nav-min{
     border-bottom:1px solid #ddd;
     position:relative;
+    background: rgb(255,249,217);
 }
+
 
 ul.nav-items a{
     color:#333;
 }
+
+/* 选中li下的第一个子元素 字体大小 */
 div.nav-min-div>a:first-child{
     font-size:16px;
     color:#36A803;
 }
 
+/* 为 */
 li.nav-min  div.min-p{
- /* display:none;
- 
- */
- display:flex;
- justify-content: space-around;
+   display:none;
     width:300px;
-    height:100px;
-    top:10px;
+    height:120px;
+    top:-1px;
     left:218px;
     background: rgb(255,249,217);
     position: absolute; 
 }
 
+div.min-p-d{
+    width:180px;
+    height:120px;
+}
 
+div.nav-min-div:hover .min-p-d{
+    background-color:#ccc;
+}
 
-li.nav-min  div.min-p-d>p{
-    color:#000;
+div.min-p .min-p-d,div.min-p .min-p-m{
+   float:left;
 }
 
 
+li.nav-min  div.min-p-d>p{
+    width:180px;
+    height:40px;
+    margin-bottom:0;
+    color:#000;
+    border-bottom:1px dotted #ddd; 
+   
+}
+div.min-p .min-p-m{
+    margin-left:10px;
+    
+}
 
+div.min-p-m>p{
+    color:#000;
+    height:25px;
+    margin-bottom:0;
+}
 li.nav-min  div.min-p-m>img{
-   width:100px;
-   height:100px;
-
+   width:80px;
+   height:80px;
+   margin-top:10px;
 }
 
 
